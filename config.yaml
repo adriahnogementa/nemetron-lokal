@@ -1,2 +1,20 @@
 model:
   id: nvidia/Nemotron-3.5-Content-Safety
+
+methods:
+  msp:
+    custom_policy: policies/allgemeinerCustomPolicy.txt
+    enable_thinking: false
+    generation:
+      max_new_tokens: 100
+      do_sample: false
+  self_consistency:
+    custom_policy: policies/allgemeinerCustomPolicy.txt
+    enable_thinking: true
+    generation:
+      max_new_tokens: 1000
+      do_sample: true
+      temperature: 0.7
+      top_k: 40
+      num_return_sequences: 10
+
