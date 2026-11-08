@@ -1,8 +1,10 @@
-import torch
 import yaml
-from model import load_model, build_inputs, generate
+from model import load_model
 from data import load_data
+from methods.msp import proceed_with_msp
 from pathlib import Path
+from pprint import pprint
+
 
 def load_policy(path):
     if path is None:
@@ -17,16 +19,14 @@ def main():
     prompt = load_data()[0]
 
     processor, model = load_model(config["model"]["id"])
+    method_cfg = config["methods"]["msp"]
 
-    for method_name, method_cfg in config["methods"].items():
-        policy = load_policy(method_cfg.get("custom_policy"))
-        thinking = method_cfg["enable_thinking"]
-        gen_kwargs = method_cfg["generation"]
+    policy = load_policy(method_cfg.get("custom_policy"))
+    thinking = method_cfg["enable_thinking"]
+    gen_kwargs = method_cfg["generation"]
 
-        inputs = build_inputs(processor, model, prompt, thinking=thinking, policy=policy)
-        out, generated = generate(model, inputs, **gen_kwargs)
-        processor.decode(generated[0], skip_special_tokens=True)
-
+    result = proceed_with_msp(model, processor, prompt=prompt, thinking=thinking, policy=policy, **gen_kwargs)
+    pprint(result)
 
 
 
