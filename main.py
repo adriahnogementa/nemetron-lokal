@@ -1,4 +1,5 @@
 import yaml
+import logging
 from model import load_model
 from data import load_data
 from methods.msp import proceed_with_msp
@@ -17,7 +18,8 @@ def main():
     with open("config.yaml", encoding="utf-8") as f:
         config = yaml.safe_load(f)
 
-
+    logging.basicConfig(level=config.get("log_level", "INFO"))
+    
     processor, model = load_model(config["model"]["id"])
     method_cfg = config["methods"]["verb"]
 
@@ -25,7 +27,7 @@ def main():
     thinking = method_cfg["enable_thinking"]
     gen_kwargs = method_cfg["generation"]
 
-    for prompt in load_data(): 
+    for prompt in load_data()["prompt"]: 
 
         result = proceed_with_verb(model, processor, prompt=prompt, thinking=thinking, policy=policy, **gen_kwargs)
         pprint(result)

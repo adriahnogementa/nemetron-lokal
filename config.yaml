@@ -1,3 +1,5 @@
+log_level: INFO
+
 model:
   id: nvidia/Nemotron-3.5-Content-Safety
 
@@ -18,8 +20,16 @@ methods:
       top_k: 40
       num_return_sequences: 10
   verb:
+    type: verb
     custom_policy: policies/verbalized.txt
     enable_thinking: false
     generation:
       max_new_tokens: 100
+      do_sample: false
+  verb_thinking:
+    type: verb
+    custom_policy: policies/verbalized.txt
+    enable_thinking: true
+    generation:
+      max_new_tokens: 1024
       do_sample: false

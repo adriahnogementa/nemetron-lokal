@@ -1,4 +1,4 @@
-from model import build_inputs, generate
+from model import build_inputs, generate, continue_with
 from tokens import find_decision_pos, decision_probabilities, find_after, UNSAFE, THINK_END_PATTERN
 from . import MethodResult, MethodError, Label
 import re
@@ -37,21 +37,33 @@ def proceed_with_verb(model, processor, prompt, thinking, policy, **gen_kwargs):
                 outputs=outputs,
                 error=MethodError.DECISION_NOT_FOUND
             )   
-            
+
+    answer_until_decision = token_list[:pos_decision_token + 1]
+    confidence_text = continue_with(
+        processor, 
+        model, 
+        inputs, 
+        answer_until_decision, 
+        "\nConfidence:"
+        )
+    verb_confidence = find_confidence_in_answer("Confidence:" + confidence_text)
+    
+        
+    prediction = Label.UNSAFE if token_list[pos_decision_token] == UNSAFE else Label.SAFE
     out_logits = out.logits[pos_decision_token][0]
     p_safe, p_unsafe= decision_probabilities(out_logits)
 
 
-    verb_confidence = find_confidence_in_answer(answer_text)
-
     if verb_confidence is None:
          return MethodResult(
                 outputs=outputs,
+                prediction= prediction,
                 error=MethodError.VERB_CONF_NOT_FOUND,
                 metadata={
                                     "p_safe": p_safe,
                                     "p_unsafe": p_unsafe,
                                     "decision_position": pos_decision_token,
+                                    "confidence_continuation": confidence_text,
                                     }
          )
 
@@ -60,22 +72,25 @@ def proceed_with_verb(model, processor, prompt, thinking, policy, **gen_kwargs):
     else:
          return MethodResult(
                 outputs=outputs,
+                prediction= prediction,
                 error=MethodError.VERB_CONF_IS_NOT_VALID,
                 metadata={
                     "p_safe": p_safe,
                     "p_unsafe": p_unsafe,
                     "decision_position": pos_decision_token,
-                    "raw_confidence": verb_confidence
+                    "raw_confidence": verb_confidence,
+                    "confidence_continuation": confidence_text,
                     }    
          )
     
     return MethodResult(
         outputs=outputs,
-        prediction= Label.UNSAFE if token_list[pos_decision_token] == UNSAFE else Label.SAFE,
+        prediction= prediction,
         confidence=verb_confidence,
         metadata={
             "p_safe": p_safe,
             "p_unsafe": p_unsafe,
             "decision_position": pos_decision_token,
+            "confidence_continuation": confidence_text,
             }    
         )
