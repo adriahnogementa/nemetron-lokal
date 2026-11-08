@@ -1,3 +1,13 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtuelle Umgebung
 .venv/
-.env
-.pyc
+
+# Daten und Ergebnisse
+data/
+results/
+
+# System
+.DS_Store
