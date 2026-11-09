@@ -3,6 +3,7 @@ import logging
 from model import load_model
 from data import load_data
 from methods.msp import proceed_with_msp
+from methods.self_consist import proceed_with_self_cons
 from methods.verb import proceed_with_verb
 from pathlib import Path
 from pprint import pprint
@@ -21,7 +22,7 @@ def main():
     logging.basicConfig(level=config.get("log_level", "INFO"))
     
     processor, model = load_model(config["model"]["id"])
-    method_cfg = config["methods"]["verb"]
+    method_cfg = config["methods"]["self_consistency"]
 
     policy = load_policy(method_cfg.get("custom_policy"))
     thinking = method_cfg["enable_thinking"]
@@ -29,7 +30,7 @@ def main():
 
     for prompt in load_data()["prompt"]: 
 
-        result = proceed_with_verb(model, processor, prompt=prompt, thinking=thinking, policy=policy, **gen_kwargs)
+        result = proceed_with_self_cons(model, processor, prompt=prompt, thinking=thinking, policy=policy, **gen_kwargs)
         pprint(result)
 
 
