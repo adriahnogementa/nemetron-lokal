@@ -21,7 +21,7 @@ def proceed_with_verb(model, processor, prompt, thinking, policy, **gen_kwargs):
     pos_decision_token = find_decision_pos(token_list=token_list, thinking_mode=thinking)
 
     if thinking is False:
-        answer_text = outputs[0]
+        start = 0
     else:
         start = find_after(token_list,THINK_END_PATTERN)
         if start is None:
@@ -29,8 +29,6 @@ def proceed_with_verb(model, processor, prompt, thinking, policy, **gen_kwargs):
                         outputs=outputs,
                         error=MethodError.THINK_END_NOT_FOUND,
                          )   
-        answer_tokens = token_list[start:]
-        answer_text = processor.decode(answer_tokens, skip_special_tokens=True)
 
     if (pos_decision_token is None):
             return MethodResult(
