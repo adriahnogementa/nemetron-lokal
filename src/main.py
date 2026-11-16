@@ -16,7 +16,7 @@ def load_policy(path):
 
 
 def main():
-    with open("config.yaml", encoding="utf-8") as f:
+    with open("../config.yaml", encoding="utf-8") as f:
         config = yaml.safe_load(f)
 
     logging.basicConfig(level=config.get("log_level", "INFO"))

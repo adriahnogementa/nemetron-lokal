@@ -5,13 +5,13 @@ model:
 
 methods:
   msp:
-    custom_policy: policies/allgemeinerCustomPolicy.txt
+    custom_policy: ../policies/allgemeinerCustomPolicy.txt
     enable_thinking: false
     generation:
       max_new_tokens: 100
       do_sample: false
   self_consistency:
-    custom_policy: policies/allgemeinerCustomPolicy.txt
+    custom_policy: ../policies/allgemeinerCustomPolicy.txt
     enable_thinking: true
     generation:
       max_new_tokens: 1000
@@ -21,21 +21,21 @@ methods:
       num_return_sequences: 10
   verb:
     type: verb
-    custom_policy: policies/verbalized.txt
+    custom_policy: ../policies/verbalized.txt
     enable_thinking: false
     generation:
       max_new_tokens: 100
       do_sample: false
   verb_thinking:
     type: verb
-    custom_policy: policies/verbalized.txt
+    custom_policy: ../policies/verbalized.txt
     enable_thinking: true
     generation:
       max_new_tokens: 1024
       do_sample: false
   self_consistency:
     type: self_consistency
-    custom_policy: policies/allgemeinerCustomPolicy.txt
+    custom_policy: ../policies/allgemeinerCustomPolicy.txt
     enable_thinking: true
     generation:
       max_new_tokens: 1024

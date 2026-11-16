@@ -1,6 +1,6 @@
 from collections import Counter
-from model import build_inputs, generate, continue_with
-from tokens import find_decision_pos, decision_probabilities, find_after, UNSAFE, THINK_END_PATTERN
+from src.model import build_inputs, generate, continue_with
+from src.tokens import find_decision_pos, decision_probabilities, find_after, UNSAFE, THINK_END_PATTERN
 from . import MethodResult, MethodError, Label
 import re
 

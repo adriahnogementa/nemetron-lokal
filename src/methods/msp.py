@@ -1,5 +1,5 @@
-from model import build_inputs, generate
-from tokens import find_decision_pos, decision_probabilities, UNSAFE
+from src.model import build_inputs, generate
+from src.tokens import find_decision_pos, decision_probabilities, UNSAFE
 from . import MethodResult, MethodError, Label
 
 
