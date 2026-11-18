@@ -145,8 +145,9 @@ def main():
     final_splits = {"train": train, "validation": validation, "test": test}
     for split_name, table in final_splits.items():
         output_file = os.path.join(args.out, f"{split_name}.jsonl")
-        table.drop(columns=COMPARE_COLUMN).to_json(
-            output_file, orient="records", lines=True, force_ascii=False)
+        table = table.drop(columns=COMPARE_COLUMN)
+        table["source"] = "v3"
+        table.to_json(output_file, orient="records", lines=True, force_ascii=False)
 
 
 if __name__ == "__main__":
