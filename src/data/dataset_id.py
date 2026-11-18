@@ -115,7 +115,7 @@ def remove_overlaps(table, forbidden_texts, split_name, use_fuzzy, similarity_th
 def main():
     parser = argparse.ArgumentParser(description=__doc__,
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("--out", default="data_de", help="Zielordner")
+    parser.add_argument("--out", default="../data_in", help="Zielordner")
     parser.add_argument("--fuzzy", action="store_true",
                         help="auch Beinahe-Duplikate entfernen (dauert länger)")
     parser.add_argument("--threshold", type=float, default=0.9,

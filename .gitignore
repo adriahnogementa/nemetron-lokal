@@ -6,8 +6,9 @@ __pycache__/
 .venv/
 
 # Daten und Ergebnisse
-data_de/
+data_in/
 results/
+eval/notebooks/generated/
 
 # System
 .DS_Store
