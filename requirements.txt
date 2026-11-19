@@ -8,3 +8,6 @@ scikit-learn
 matplotlib
 plotly
 nbformat
+deepl
+python-dotenv
+sentence-transformers

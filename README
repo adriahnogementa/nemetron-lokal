@@ -1,0 +1,17 @@
+### Nemotron-Safety-Guard-Dataset-v3 (training data)
+- Source: NVIDIA, *CultureGuard* (arXiv:2508.01710)
+- Data: https://huggingface.co/datasets/nvidia/Nemotron-Safety-Guard-Dataset-v3
+- License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+- Note: Redacted samples are not included in the original release and must be reconstructed from their original source, which is subject to its own license.
+
+### PolyGuard (finance subset)
+- Source: Kang et al. (2025), *PolyGuard: Multi-Domain, Policy-Grounded, AI Security Guardrail Benchmark*, NeurIPS 2025 Datasets and Benchmarks Track.
+- Data: https://huggingface.co/datasets/Virtue-AI-HUB/PolyGuard
+- License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+- Changes: Only the `finance_input` configuration was used. Unsafe samples use the rephrased instance, safe samples the original instance. Data was reformatted to JSONL and translated to German (DeepL).
+
+### ExpGuardTest (finance subset)
+- Source: Choi et al. (2026), *ExpGuard: LLM Content Moderation in Specialized Domains*, ICLR 2026.
+- Data: https://huggingface.co/datasets/6rightjade/expguardmix (gated)
+- License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+- Changes: Only the finance domain of the `expguardtest` subset was used. Data was reformatted to JSONL. Prompts were translated to German (DeepL); 5 translations were manually corrected (see `corrections.json`). Responses were kept in English and are not used in the evaluation.

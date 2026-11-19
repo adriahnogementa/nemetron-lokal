@@ -1,0 +1,24 @@
+kuerzel,taxonomie,label,ebene_im_paper,definition_im_paper,familie_eigene_gruppierung,finanzrelevanz_eigene_einschaetzung,begruendung_finanzrelevanz,in_grafiken
+S1,aegis,Violence,Kern,ja (A.12.3),Gewalt und Waffen,gering,"Körperliche Gewalt, Finanzbezug nur ausnahmsweise",True
+S2,aegis,Sexual,Kern,ja (A.12.3),Sexuelle Inhalte,gering,Kein inhaltlicher Finanzbezug,True
+S3,aegis,Criminal Planning/Confessions,Kern,ja (A.12.3),Kriminalitaet und Betrug,mittel,"Umfasst auch Finanzkriminalität, überwiegend aber andere Delikte (z. B. Diebstahl, Banküberfall)",True
+S4,aegis,Guns and Illegal Weapons,Kern,ja (A.12.3),Gewalt und Waffen,gering,Kein inhaltlicher Finanzbezug,True
+S5,aegis,Controlled/Regulated Substances,Kern,ja (A.12.3),Kriminalitaet und Betrug,gering,"Drogen und regulierte Stoffe, Finanzbezug nur ausnahmsweise",True
+S6,aegis,Suicide and Self Harm,Kern,ja (A.12.3),Selbstschaden,gering,Finanzbezug nur ausnahmsweise (z. B. Schulden als Anlass),True
+S7,aegis,Sexual (minor),Kern,ja (A.12.3),Sexuelle Inhalte,gering,Kein inhaltlicher Finanzbezug,True
+S8,aegis,Hate/Identity Hate,Kern,ja (A.12.3),Hass und Belaestigung,gering,Kein inhaltlicher Finanzbezug,True
+S9,aegis,PII/Privacy,Kern,ja (A.12.3),Privatsphaere,hoch,"Betrifft direkt Finanzdaten wie Konto-, Karten- und Kundendaten",True
+S10,aegis,Harassment,Kern,ja (A.12.3),Hass und Belaestigung,gering,Kein inhaltlicher Finanzbezug,True
+S11,aegis,Threat,Kern,ja (A.12.3),Gewalt und Waffen,gering,Kein inhaltlicher Finanzbezug,True
+S12,aegis,Profanity,Kern,ja (A.12.3),Hass und Belaestigung,gering,Kein inhaltlicher Finanzbezug,True
+S13,aegis,Needs Caution,Sonderlabel,ja (A.12.3),Sonderlabel,nicht zuordenbar,Zusatzmarker ohne eigenes Thema,False
+S14,aegis,Other,Auffangkategorie,ja (A.12.3),Sonstiges,nicht zuordenbar,Auffangkategorie ohne einheitliches Thema,True
+S15,aegis,Manipulation,Fine-grained (aus Other),nein (eigene Arbeitsdefinition noetig),Desinformation und Manipulation,mittel,"Umfasst Social Engineering und Marktmanipulation, aber auch nicht-finanzielle Manipulation",True
+S16,aegis,Fraud/Deception,Fine-grained (aus Other),nein (eigene Arbeitsdefinition noetig),Kriminalitaet und Betrug,hoch,"Betrug zielt typischerweise direkt auf Geld, Konten oder Zahlungsmittel",True
+S17,aegis,Malware,Fine-grained (aus Other),nein (nur Hinweis auf Hacking/Phishing/Ransomware in A.6),Kriminalitaet und Betrug,mittel,"Phishing, Ransomware und Banking-Trojaner betreffen Finanzanwendungen häufig, Malware ist aber nicht finanzspezifisch",True
+S18,aegis,High Risk Gov Decision Making,Fine-grained (aus Other),nein (eigene Arbeitsdefinition noetig),Beratung und Regulierung,gering,"Staatliche Entscheidungen, Finanzbezug nur ausnahmsweise",True
+S19,aegis,Political/Misinformation/Conspiracy,Fine-grained (aus Other),nein (eigene Arbeitsdefinition noetig),Desinformation und Manipulation,gering,"Politische Inhalte, Finanzbezug nur ausnahmsweise",True
+S20,aegis,Copyright/Trademark/Plagiarism,Fine-grained (aus Other),nein (eigene Arbeitsdefinition noetig),Beratung und Regulierung,gering,Kein inhaltlicher Finanzbezug,True
+S21,aegis,Unauthorized Advice,Fine-grained (aus Other),nein (A.10.1 ist KEINE offizielle Definition),Beratung und Regulierung,hoch,"Umfasst unzulässige Finanz-, Anlage- und Steuerberatung (daneben auch Rechts- und Medizinberatung)",True
+S22,aegis,Illegal Activity,Fine-grained (aus Other),nein (eigene Arbeitsdefinition noetig),Kriminalitaet und Betrug,mittel,"Umfasst u. a. Steuerhinterziehung und Geldwäsche, aber auch viele Delikte ohne Finanzbezug",True
+S23,aegis,Immoral/Unethical,Fine-grained (aus Other),nein (eigene Arbeitsdefinition noetig),Sonstiges,gering,"Heterogen, Finanzbezug nur ausnahmsweise",True

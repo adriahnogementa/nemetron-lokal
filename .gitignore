@@ -13,3 +13,6 @@ eval/notebooks/generated/
 
 # System
 .DS_Store
+
+#Keys
+.env

@@ -1,0 +1,67 @@
+kuerzel,taxonomie,label,ebene_im_paper,definition_im_paper,familie_eigene_gruppierung,finanzrelevanz_eigene_einschaetzung,begruendung_finanzrelevanz,in_grafiken
+c0,expguard,Unharmful,Pseudo-Kategorie,nein (nur Name in A.7),Sonderlabel,nicht zuordenbar,Kennzeichnet unbedenkliche Inhalte,False
+c1,expguard,Violence & Incitement,Kern,nein (nur Name in Tab. 1/A.7),Gewalt und Waffen,gering,"Körperliche Gewalt, Finanzbezug nur ausnahmsweise",True
+c2,expguard,Sexual Content & Exploitation,Kern,nein (nur Name in Tab. 1/A.7),Sexuelle Inhalte,gering,Kein inhaltlicher Finanzbezug,True
+c3,expguard,Hate Speech & Discrimination,Kern,nein (nur Name in Tab. 1/A.7),Hass und Belaestigung,gering,Kein inhaltlicher Finanzbezug,True
+c4,expguard,Harassment & Bullying,Kern,nein (nur Name in Tab. 1/A.7),Hass und Belaestigung,gering,Kein inhaltlicher Finanzbezug,True
+c5,expguard,Self-Harm & Suicide Promotion,Kern,nein (nur Name in Tab. 1/A.7),Selbstschaden,gering,Finanzbezug nur ausnahmsweise,True
+c6,expguard,Privacy Violation,Kern,nein (nur Name in Tab. 1/A.7),Privatsphaere,hoch,"Betrifft direkt Finanzdaten wie Konto-, Karten- und Kundendaten",True
+c7,expguard,Intellectual Property Infringement,Kern,nein (nur Name in Tab. 1/A.7),Beratung und Regulierung,gering,Kein inhaltlicher Finanzbezug; analog zu Aegis S20,True
+c8,expguard,Illegal Weapons,Kern,nein (nur Name in Tab. 1/A.7),Gewalt und Waffen,gering,Kein inhaltlicher Finanzbezug,True
+c9,expguard,Controlled Substances,Kern,nein (nur Name in Tab. 1/A.7),Kriminalitaet und Betrug,gering,"Drogen und regulierte Stoffe, Finanzbezug nur ausnahmsweise; analog zu Aegis S5",True
+c10,expguard,Criminal Planning,Kern,nein (nur Name in Tab. 1/A.7),Kriminalitaet und Betrug,mittel,"Umfasst auch Finanzkriminalität, aber ebenso andere Delikte",True
+c11,expguard,"Fraud, Scams & Deception",Kern,nein (nur Name in Tab. 1/A.7),Kriminalitaet und Betrug,hoch,Dominante Kategorie im Finanz-Subset von ExpGuardMix,True
+c12,expguard,Unqualified Professional Advice,Kern,nein (nur Name in Tab. 1/A.7),Beratung und Regulierung,hoch,Umfasst unqualifizierte Finanz- neben Medizin- und Rechtsberatung; analog zu Aegis S21,True
+c13,expguard,Harmful Misinformation & Disinformation,Kern,nein (nur Name in Tab. 1/A.7),Desinformation und Manipulation,mittel,"Kann falsche Markt- oder Finanzinformationen umfassen, aber auch andere Themen",True
+P1,polyguard,Compliance Evasion,Automatisch generiert (o4-mini),nein (automatisch benannt),Kriminalitaet und Betrug,hoch,Aus Finanzrichtlinien abgeleitet; Umgehung von Aufsichtsregeln,True
+P2,polyguard,Market Manipulation,Automatisch generiert (o4-mini),nein (automatisch benannt),Desinformation und Manipulation,hoch,Aus Finanzrichtlinien abgeleitet; analog zu Aegis S15 (Marktmanipulation),True
+P3,polyguard,Regulatory Evasion,Automatisch generiert (o4-mini),nein (automatisch benannt),Kriminalitaet und Betrug,hoch,Aus Finanzrichtlinien abgeleitet; Umgehung von Aufsichtsregeln,True
+P4,polyguard,Aml Evasion,Automatisch generiert (o4-mini),nein (automatisch benannt),Kriminalitaet und Betrug,hoch,Aus Finanzrichtlinien abgeleitet; Geldwäsche,True
+P5,polyguard,Document Forgery,Automatisch generiert (o4-mini),nein (automatisch benannt),Kriminalitaet und Betrug,hoch,Aus Finanzrichtlinien abgeleitet; Fälschung,True
+P6,polyguard,Insider Trading,Automatisch generiert (o4-mini),nein (automatisch benannt),Kriminalitaet und Betrug,hoch,Aus Finanzrichtlinien abgeleitet; Straftatbestand (daher nicht Manipulation),True
+P7,polyguard,Algorithmic Trading Manipulation,Automatisch generiert (o4-mini),nein (automatisch benannt),Desinformation und Manipulation,hoch,Aus Finanzrichtlinien abgeleitet; Marktmanipulation,True
+P8,polyguard,Money Laundering,Automatisch generiert (o4-mini),nein (automatisch benannt),Kriminalitaet und Betrug,hoch,Aus Finanzrichtlinien abgeleitet; Geldwäsche,True
+P9,polyguard,Scam Facilitation,Automatisch generiert (o4-mini),nein (automatisch benannt),Kriminalitaet und Betrug,hoch,Aus Finanzrichtlinien abgeleitet; Betrug,True
+P10,polyguard,Cyberattacks,Automatisch generiert (o4-mini),nein (automatisch benannt),Kriminalitaet und Betrug,hoch,Aus Finanzrichtlinien abgeleitet; Cyberangriff; analog zu Aegis S17,True
+P11,polyguard,Sanctions Evasion,Automatisch generiert (o4-mini),nein (automatisch benannt),Kriminalitaet und Betrug,hoch,Aus Finanzrichtlinien abgeleitet; Umgehung von Sanktionen,True
+P12,polyguard,Transaction Structuring,Automatisch generiert (o4-mini),nein (automatisch benannt),Kriminalitaet und Betrug,hoch,Aus Finanzrichtlinien abgeleitet; Geldwäsche (Structuring),True
+P13,polyguard,Identity Fraud,Automatisch generiert (o4-mini),nein (automatisch benannt),Kriminalitaet und Betrug,hoch,Aus Finanzrichtlinien abgeleitet; Betrug,True
+P14,polyguard,Insurance Fraud,Automatisch generiert (o4-mini),nein (automatisch benannt),Kriminalitaet und Betrug,hoch,Aus Finanzrichtlinien abgeleitet; Betrug,True
+P15,polyguard,Falsified Records,Automatisch generiert (o4-mini),nein (automatisch benannt),Kriminalitaet und Betrug,hoch,Aus Finanzrichtlinien abgeleitet; Fälschung,True
+P16,polyguard,Credit Scoring Fraud,Automatisch generiert (o4-mini),nein (automatisch benannt),Kriminalitaet und Betrug,hoch,Aus Finanzrichtlinien abgeleitet; Betrug,True
+P17,polyguard,Security Hacking,Automatisch generiert (o4-mini),nein (automatisch benannt),Kriminalitaet und Betrug,hoch,Aus Finanzrichtlinien abgeleitet; Cyberangriff; analog zu Aegis S17,True
+P18,polyguard,Money Laundering Structuring,Automatisch generiert (o4-mini),nein (automatisch benannt),Kriminalitaet und Betrug,hoch,Aus Finanzrichtlinien abgeleitet; Geldwäsche (Structuring),True
+P19,polyguard,Hacking Techniques,Automatisch generiert (o4-mini),nein (automatisch benannt),Kriminalitaet und Betrug,hoch,Aus Finanzrichtlinien abgeleitet; Cyberangriff; analog zu Aegis S17,True
+P20,polyguard,Cyber Sabotage,Automatisch generiert (o4-mini),nein (automatisch benannt),Kriminalitaet und Betrug,hoch,Aus Finanzrichtlinien abgeleitet; Cyberangriff; analog zu Aegis S17,True
+P21,polyguard,Fraudulent Reporting,Automatisch generiert (o4-mini),nein (automatisch benannt),Kriminalitaet und Betrug,hoch,Aus Finanzrichtlinien abgeleitet; Bilanzfälschung,True
+P22,polyguard,Identity Document Fraud,Automatisch generiert (o4-mini),nein (automatisch benannt),Kriminalitaet und Betrug,hoch,Aus Finanzrichtlinien abgeleitet; Fälschung,True
+P23,polyguard,Investment Fraud,Automatisch generiert (o4-mini),nein (automatisch benannt),Kriminalitaet und Betrug,hoch,Aus Finanzrichtlinien abgeleitet; Betrug,True
+P24,polyguard,Structuring Evasion,Automatisch generiert (o4-mini),nein (automatisch benannt),Kriminalitaet und Betrug,hoch,Aus Finanzrichtlinien abgeleitet; Geldwäsche (Structuring),True
+P25,polyguard,Financial Statement Fraud,Automatisch generiert (o4-mini),nein (automatisch benannt),Kriminalitaet und Betrug,hoch,Aus Finanzrichtlinien abgeleitet; Bilanzfälschung,True
+P26,polyguard,Ai Fraud Detection Evasion,Automatisch generiert (o4-mini),nein (automatisch benannt),Kriminalitaet und Betrug,hoch,Aus Finanzrichtlinien abgeleitet; Umgehung von Betrugserkennung,True
+P27,polyguard,Cybersecurity Exploits,Automatisch generiert (o4-mini),nein (automatisch benannt),Kriminalitaet und Betrug,hoch,Aus Finanzrichtlinien abgeleitet; Cyberangriff; analog zu Aegis S17,True
+P28,polyguard,Social Engineering,Automatisch generiert (o4-mini),nein (automatisch benannt),Desinformation und Manipulation,hoch,Aus Finanzrichtlinien abgeleitet; analog zu Aegis S15 (Social Engineering),True
+P29,polyguard,Ai Governance Evasion,Automatisch generiert (o4-mini),nein (automatisch benannt),Kriminalitaet und Betrug,hoch,Aus Finanzrichtlinien abgeleitet; Umgehung von Aufsichtsregeln (wie P1/P3),True
+P30,polyguard,Data Privacy Violations,Automatisch generiert (o4-mini),nein (automatisch benannt),Privatsphaere,hoch,Aus Finanzrichtlinien abgeleitet; analog zu Aegis S9,True
+P31,polyguard,Laundering Networks,Automatisch generiert (o4-mini),nein (automatisch benannt),Kriminalitaet und Betrug,hoch,Aus Finanzrichtlinien abgeleitet; Geldwäsche,True
+P32,polyguard,Disinformation,Automatisch generiert (o4-mini),nein (automatisch benannt),Desinformation und Manipulation,hoch,Aus Finanzrichtlinien abgeleitet; Desinformation,True
+P33,polyguard,Deepfake Impersonation,Automatisch generiert (o4-mini),nein (automatisch benannt),Kriminalitaet und Betrug,hoch,Aus Finanzrichtlinien abgeleitet; Identitätstäuschung zu Betrugszwecken (alternativ Manipulation),True
+P34,polyguard,Phishing & Social Engineering,Automatisch generiert (o4-mini),nein (automatisch benannt),Desinformation und Manipulation,hoch,Aus Finanzrichtlinien abgeleitet; wie P28 (Phishing alternativ zu Kriminalitaet wie Aegis S17),True
+P35,polyguard,Financial Statement Fabrication,Automatisch generiert (o4-mini),nein (automatisch benannt),Kriminalitaet und Betrug,hoch,Aus Finanzrichtlinien abgeleitet; Bilanzfälschung,True
+P36,polyguard,Imposter Websites,Automatisch generiert (o4-mini),nein (automatisch benannt),Kriminalitaet und Betrug,hoch,Aus Finanzrichtlinien abgeleitet; Betrug,True
+P37,polyguard,Supply Chain Attacks,Automatisch generiert (o4-mini),nein (automatisch benannt),Kriminalitaet und Betrug,hoch,Aus Finanzrichtlinien abgeleitet; Cyberangriff; analog zu Aegis S17,True
+P38,polyguard,Discriminatory Lending,Automatisch generiert (o4-mini),nein (automatisch benannt),Hass und Belaestigung,hoch,Aus Finanzrichtlinien abgeleitet; Diskriminierung (Zuordnung unsicher),True
+P39,polyguard,Illicit Financing Documents,Automatisch generiert (o4-mini),nein (automatisch benannt),Kriminalitaet und Betrug,hoch,Aus Finanzrichtlinien abgeleitet; Fälschung/Geldwäsche,True
+P40,polyguard,Kyc Evasion,Automatisch generiert (o4-mini),nein (automatisch benannt),Kriminalitaet und Betrug,hoch,Aus Finanzrichtlinien abgeleitet; Geldwäsche (KYC-Umgehung),True
+P41,polyguard,Insider Threats,Automatisch generiert (o4-mini),nein (automatisch benannt),Kriminalitaet und Betrug,hoch,Aus Finanzrichtlinien abgeleitet; Cyberangriff durch Innentäter,True
+P42,polyguard,Ransomware Attacks,Automatisch generiert (o4-mini),nein (automatisch benannt),Kriminalitaet und Betrug,hoch,Aus Finanzrichtlinien abgeleitet; Cyberangriff; analog zu Aegis S17,True
+P43,polyguard,Misleading Advice,Automatisch generiert (o4-mini),nein (automatisch benannt),Beratung und Regulierung,hoch,Aus Finanzrichtlinien abgeleitet; analog zu Aegis S21,True
+P44,polyguard,Privacy Leak,Automatisch generiert (o4-mini),nein (automatisch benannt),Privatsphaere,hoch,Aus Finanzrichtlinien abgeleitet; analog zu Aegis S9,True
+P45,polyguard,Pump And Dump,Automatisch generiert (o4-mini),nein (automatisch benannt),Desinformation und Manipulation,hoch,Aus Finanzrichtlinien abgeleitet; Marktmanipulation,True
+P46,polyguard,Encryption Breaking,Automatisch generiert (o4-mini),nein (automatisch benannt),Kriminalitaet und Betrug,hoch,Aus Finanzrichtlinien abgeleitet; Cyberangriff; analog zu Aegis S17,True
+P47,polyguard,Malware Development,Automatisch generiert (o4-mini),nein (automatisch benannt),Kriminalitaet und Betrug,hoch,Aus Finanzrichtlinien abgeleitet; analog zu Aegis S17,True
+P48,polyguard,Aml Regulatory Arbitrage,Automatisch generiert (o4-mini),nein (automatisch benannt),Kriminalitaet und Betrug,hoch,Aus Finanzrichtlinien abgeleitet; Geldwäsche,True
+P49,polyguard,Intellectual Property Theft,Automatisch generiert (o4-mini),nein (automatisch benannt),Beratung und Regulierung,hoch,Aus Finanzrichtlinien abgeleitet; analog zu Aegis S20,True
+P50,polyguard,Ownership Concealment,Automatisch generiert (o4-mini),nein (automatisch benannt),Kriminalitaet und Betrug,hoch,Aus Finanzrichtlinien abgeleitet; Geldwäsche (Eigentümerverschleierung),True
+P51,polyguard,Apt Intrusion,Automatisch generiert (o4-mini),nein (automatisch benannt),Kriminalitaet und Betrug,hoch,Aus Finanzrichtlinien abgeleitet; Cyberangriff; analog zu Aegis S17,True
+P52,polyguard,Mortgage Fraud,Automatisch generiert (o4-mini),nein (automatisch benannt),Kriminalitaet und Betrug,hoch,Aus Finanzrichtlinien abgeleitet; Betrug,True
