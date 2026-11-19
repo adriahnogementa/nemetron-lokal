@@ -4,7 +4,7 @@ import pandas as pd
 from dotenv import load_dotenv
 
 EXPGUARD = "../../data_ood/expguard_finance_test.jsonl"
-POLYGUARD = "../../data_ood/polyguard_finance_test.jsonl"
+POLYGUARD = "../data_ood/polyguard_finance_test.jsonl"
 OUT_DIR = "../data_ood_translated/"
 
 def translate_in_batches(prompts, client, target_lang="DE" , batch_size=50):
@@ -24,12 +24,12 @@ def main():
 
     os.makedirs(OUT_DIR, exist_ok=True)
 
-    expguard = pd.read_json(EXPGUARD, lines=True)
-    expguard["prompt_before_translation"] = expguard["prompt"]
-    expguard["prompt"] = translate_in_batches(expguard["prompt_before_translation"], client)
+    df = pd.read_json(POLYGUARD, lines=True)
+    df["prompt_before_translation"] = df["prompt"]
+    df["prompt"] = translate_in_batches(df["prompt_before_translation"], client)
 
-    expguard.to_json(
-        os.path.join(OUT_DIR, "expguard_finance_test_de.jsonl"),
+    df.to_json(
+        os.path.join(OUT_DIR, "polyguard_finance_test_de.jsonl"),
         orient="records", lines=True, force_ascii=False,
     )
 
