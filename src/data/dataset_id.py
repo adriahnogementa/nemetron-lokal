@@ -15,11 +15,17 @@ import argparse
 import os
 import re
 import sys
-
+from similarity_report import write_similarity_report
 from datasets import load_dataset
 
 V3_REPO = "nvidia/Nemotron-Safety-Guard-Dataset-v3"
 V35_REPO = "nvidia/Nemotron-3.5-Content-Safety-Dataset"
+
+V35_TO_V3_COLUMNS = {
+    "row_id": "id",
+    "input_label": "prompt_label",
+    "input_label_source": "prompt_label_source",
+}
 
 GERMAN_LANGUAGE_CODES = {"de", "german", "deutsch", "de-de"}
 VALID_LABELS = {"safe", "unsafe"}
@@ -68,7 +74,8 @@ def find_similar_texts(texts_to_check, reference_texts, similarity_threshold, ba
     from sklearn.feature_extraction.text import TfidfVectorizer
 
     vectorizer = TfidfVectorizer(analyzer="char_wb", ngram_range=(3, 5))
-    reference_vectors = vectorizer.fit_transform(reference_texts)
+    vectorizer.fit(list(reference_texts) + list(texts_to_check))
+    reference_vectors = vectorizer.transform(reference_texts)
     check_vectors = vectorizer.transform(texts_to_check)
 
     highest_similarity = np.zeros(check_vectors.shape[0])
@@ -100,12 +107,14 @@ def remove_overlaps(table, forbidden_texts, split_name, use_fuzzy, similarity_th
         removed_rows["similarity"] = highest_similarity.round(3)
         removed_rows["most_similar_training_text"] = most_similar_text
         removed_rows = removed_rows[is_similar].sort_values("similarity", ascending=False)
-        report_file = os.path.join(output_folder, f"removed_similar_{split_name}.csv")
-        removed_rows[["similarity", "prompt", COMPARE_COLUMN, "most_similar_training_text",
-                      "prompt_label"]].to_csv(report_file, index=False, sep=";",
-                                              encoding="utf-8-sig")
-
+        write_similarity_report(table[COMPARE_COLUMN].tolist(), highest_similarity,
+                                        most_similar_text, similarity_threshold,
+                                        output_folder, split_name, show_from=0.7)
+        for t in [0.90, 0.85, 0.80, 0.75]:
+            removed = highest_similarity >= t
+            print(f"{split_name} | {t:.2f} | {removed.sum()} | {removed.mean():.1%}")
         table = table[~is_similar]
+
 
     return table.reset_index(drop=True)
 
@@ -125,10 +134,11 @@ def main():
     v3_splits = load_german_splits(V3_REPO, label_column="prompt_label")
     v35_splits = load_german_splits(V35_REPO, label_column="input_label")
 
-    train = v3_splits["train"].drop_duplicates(COMPARE_COLUMN).reset_index(drop=True)
-
+    train = v35_splits["train"].drop_duplicates(COMPARE_COLUMN).reset_index(drop=True)
+    train = train.rename(columns=V35_TO_V3_COLUMNS)
+    
     # Alle Prompts, die irgendwo im Training vorkommen (v3 und 3.5)
-    all_training_texts = set(train[COMPARE_COLUMN]) | set(v35_splits["train"][COMPARE_COLUMN])
+    all_training_texts = set(train[COMPARE_COLUMN]) | set(v3_splits["train"][COMPARE_COLUMN])
 
     os.makedirs(args.out, exist_ok=True)
 
@@ -141,14 +151,13 @@ def main():
     validation = remove_overlaps(v3_splits["validation"], texts_not_allowed_in_validation,
                                  "validation", args.fuzzy, args.threshold, args.out)
 
-    # Speichern: eine lesbare JSONL-Datei pro Split (eine Zeile = ein Eintrag)
+    sources = {"train": "v3.5", "validation": "v3", "test": "v3"}
     final_splits = {"train": train, "validation": validation, "test": test}
     for split_name, table in final_splits.items():
         output_file = os.path.join(args.out, f"{split_name}.jsonl")
         table = table.drop(columns=COMPARE_COLUMN)
-        table["source"] = "v3"
+        table["source"] = sources[split_name]
         table.to_json(output_file, orient="records", lines=True, force_ascii=False)
-
 
 if __name__ == "__main__":
     main()
