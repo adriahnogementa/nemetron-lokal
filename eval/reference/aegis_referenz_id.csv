@@ -11,7 +11,7 @@ S9,aegis,PII/Privacy,Kern,ja (A.12.3),Privatsphaere,hoch,"Betrifft direkt Finanz
 S10,aegis,Harassment,Kern,ja (A.12.3),Hass und Belaestigung,gering,Kein inhaltlicher Finanzbezug,True
 S11,aegis,Threat,Kern,ja (A.12.3),Gewalt und Waffen,gering,Kein inhaltlicher Finanzbezug,True
 S12,aegis,Profanity,Kern,ja (A.12.3),Hass und Belaestigung,gering,Kein inhaltlicher Finanzbezug,True
-S13,aegis,Needs Caution,Sonderlabel,ja (A.12.3),Sonderlabel,nicht zuordenbar,Zusatzmarker ohne eigenes Thema,False
+S13,aegis,Needs Caution,Sonderlabel,ja (A.12.3),Sonstiges,nicht zuordenbar,Zusatzmarker ohne eigenes Thema,True
 S14,aegis,Other,Auffangkategorie,ja (A.12.3),Sonstiges,nicht zuordenbar,Auffangkategorie ohne einheitliches Thema,True
 S15,aegis,Manipulation,Fine-grained (aus Other),nein (eigene Arbeitsdefinition noetig),Desinformation und Manipulation,mittel,"Umfasst Social Engineering und Marktmanipulation, aber auch nicht-finanzielle Manipulation",True
 S16,aegis,Fraud/Deception,Fine-grained (aus Other),nein (eigene Arbeitsdefinition noetig),Kriminalitaet und Betrug,hoch,"Betrug zielt typischerweise direkt auf Geld, Konten oder Zahlungsmittel",True
